@@ -1,5 +1,8 @@
-import ExpenceItem from "./components/ExpenseItem";
-import Expence from "./components/Item";
+import ExpenceItem from "./components/Expense/ExpenseItem";
+import Expence from "./components/Expense/Item";
+import Card from "./components/Ui/Card";
+import React from "react";
+
 function App() {
    const object=[
     {
@@ -32,25 +35,21 @@ function App() {
   }
   ]
 return (
-    <div>
+    <Card>
       <h2>Let's get started!</h2>
       {
       
        object.map((item)=>{
-       
-        return  <ExpenceItem 
-         title={item.title} 
-         date={item.date} 
-         amount={item.amount}
-         location={item.location}>
-        </ExpenceItem>
+       return  <ExpenceItem title={item.title}date={item.date}amount={item.amount}
+         location={item.location}> </ExpenceItem>
       })
       
     }    
      <Expence></Expence> 
      
-    </div>
+    </Card>
     );
  }
 
 export default App;
+
