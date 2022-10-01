@@ -1,7 +1,7 @@
 import ExpenceItem from "./components/Expense/ExpenseItem";
-import Expence from "./components/Expense/Item";
+// import Expence from "./components/Expense/Item";
 import Card from "./components/Ui/Card";
-import React from "react";
+
 
 function App() {
    const object=[
@@ -41,11 +41,11 @@ return (
       
        object.map((item)=>{
        return  <ExpenceItem title={item.title}date={item.date}amount={item.amount}
-         location={item.location}> </ExpenceItem>
+         location={item.location} key={item.id}> </ExpenceItem>
       })
       
     }    
-     <Expence></Expence> 
+     {/* <Expence></Expence>  */}
      
     </Card>
     );
