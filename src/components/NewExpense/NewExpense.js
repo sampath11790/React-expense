@@ -1,6 +1,7 @@
 import ExpenseForm from "./ExpenseForm"
 import './NewExpense.css'
-function NewExpense(){
+function NewExpense(props){
+    console.log(props.title)
 return(
     <div className="new-expense">
      <ExpenseForm></ExpenseForm>
