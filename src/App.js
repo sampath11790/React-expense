@@ -1,6 +1,7 @@
 import ExpenceItem from "./components/Expense/ExpenseItem";
 // import Expence from "./components/Expense/Item";
 import Card from "./components/Ui/Card";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 
 function App() {
@@ -35,8 +36,12 @@ function App() {
   }
   ]
 return (
-    <Card>
+  <div>
+     <NewExpense></NewExpense>
+   <Card>
+     
       <h2>Let's get started!</h2>
+     
       {
       
        object.map((item)=>{
@@ -48,6 +53,8 @@ return (
      {/* <Expence></Expence>  */}
      
     </Card>
+  </div>
+    
     );
  }
 
