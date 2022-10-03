@@ -8,17 +8,30 @@ function ExpenseForm(){
     function TitleHandler(event){
 
         setEnteredTitle(event.target.value)
-        console.log("titele changing")
+       // console.log("titele changing")
     }
     function AmountHandler(event){
 
         setEnteredAmount(event.target.value)
-          console.log("Amount changing")
+         // console.log("Amount changing")
       }
       function DateHandler(event){
 
         setEnteredDate(event.target.value)
-          console.log("Date changing")
+         // console.log("Date changing")
+      }
+      const obj={
+        Title:EnteredTittl,
+        date:EnteredDate,
+        amount:EnteredAmount
+      }
+      function SubmitDate(event){
+        event.preventDefault()
+        console.log(obj)
+       
+        console.log("am submitData")
+       // console.log(obj)
+
       }
 //    console.log(EnteredTittl)
 //    console.log(EnteredAmount)
@@ -26,7 +39,7 @@ function ExpenseForm(){
    
 return(
     
-    <form>
+    <form  onSubmit={SubmitDate}>
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
             <label>Title</label>
@@ -42,7 +55,7 @@ return(
         </div>
         </div>
         <div className='new-expense__control'>
-            <button >Submit</button>
+            <button type='submit'>Submit</button>
         </div>
     
     </form>
