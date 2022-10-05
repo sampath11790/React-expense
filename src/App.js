@@ -2,9 +2,12 @@ import ExpenceItem from "./components/Expense/ExpenseItem";
 // import Expence from "./components/Expense/Item";
 import Card from "./components/Ui/Card";
 import NewExpense from "./components/NewExpense/NewExpense";
+import { useState } from "react";
+
 
 
 function App() {
+ 
    const object=[
     {
     id:1,
@@ -35,18 +38,30 @@ function App() {
     location:"bangalore"
   }
   ]
+ 
+  const [currentObjectList,setNewobject]=useState(object)
+
+const AddExpenseHandler=(newexpense)=>{
+  //object.push(newexpense)
+  //console.log(object)
+  setNewobject([...currentObjectList,newexpense])
+  console.log("this is app.js new expenses")
+ 
+}
+console.log(currentObjectList)
+
+
 return (
   <div>
-     <NewExpense></NewExpense>
+     <NewExpense onAddExpense={AddExpenseHandler}></NewExpense>
    <Card>
      
       <h2>Let's get started!</h2>
-     
-      {
+    {
       
-       object.map((item)=>{
+      currentObjectList.map((item)=>{
        return  <ExpenceItem title={item.title}date={item.date}amount={item.amount}
-         location={item.location} key={item.id}> </ExpenceItem>
+         location={item.location} key={item.id} > </ExpenceItem>
       })
       
     }    

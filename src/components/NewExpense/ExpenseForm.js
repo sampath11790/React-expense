@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import './ExpenseForm.css'
+import Test from './Test'
 
-function ExpenseForm(){
+
+function ExpenseForm(props){
     const [EnteredTittl,setEnteredTitle]=useState('')
     const [EnteredAmount,setEnteredAmount]=useState('')
     const [EnteredDate,setEnteredDate]=useState('')
@@ -20,38 +22,43 @@ function ExpenseForm(){
         setEnteredDate(event.target.value)
          // console.log("Date changing")
       }
-      const obj={
-        Title:EnteredTittl,
-        date:EnteredDate,
-        amount:EnteredAmount
-      }
+     
       function SubmitDate(event){
-        event.preventDefault()
-        console.log(obj)
+        event.preventDefault();
+        const expenseData={
+            title:EnteredTittl,
+            date:new Date(EnteredDate),
+            amount:JSON.parse(EnteredAmount)
+          }
+   props.onSaveExpenseData(expenseData)
+         //console.log(expenseData)
+         setEnteredTitle('')
+         setEnteredAmount('')
+         setEnteredDate('')
+        
        
-        console.log("am submitData")
-       // console.log(obj)
-
+        console.log("am submitData");
+     
       }
 //    console.log(EnteredTittl)
 //    console.log(EnteredAmount)
 //    console.log(EnteredDate)
-   
+
 return(
     
     <form  onSubmit={SubmitDate}>
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
             <label>Title</label>
-            <input type="text" onChange={TitleHandler}/>
+            <input type="text"value={EnteredTittl}onChange={TitleHandler}/>
         </div>
         <div  className='new-expense__control'>
             <label>Amount</label>
-            <input type="text" onChange={AmountHandler}/>
+            <input type="text" value={EnteredAmount} onChange={AmountHandler}/>
         </div>
         <div  className='new-expense__control'>
             <label>Date</label>
-            <input type="date" onChange={DateHandler}/>
+            <input type="date" value={EnteredDate} onChange={DateHandler}/>
         </div>
         </div>
         <div className='new-expense__control'>
