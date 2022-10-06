@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import './ExpenseDetails.css'
+import ExpenseFilter from './ExpenseFilter';
 const ExpenseDetails=(props)=>{
     const title=props.title;
     const location=props.location
@@ -11,6 +12,7 @@ const ExpenseDetails=(props)=>{
     return(
        
        <div className='expense-item__description'>
+          
         <h2>{title}</h2>
         <button onClick={ChangeAmount}>change amount</button>
         <div className='Location-Expenditure'>

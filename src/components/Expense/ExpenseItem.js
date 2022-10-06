@@ -1,9 +1,7 @@
 import React ,{useState} from 'react';
 import './ExpenseItem.css'
 import ExpenseDate from './ExpenseDate';
-import ExpenseDetails from './ExpenseDetails';
-
-
+import ExpenseDetails from './ExpenseDetails'
 
 
 const ExpenceItem=(props)=>{
@@ -13,7 +11,7 @@ const ExpenceItem=(props)=>{
 //    const ExpenseAmount=294.67;
 //     const LocationOfExpenditure="Bangalore";
 const [title,setTitle]=useState(props.title)
-
+//console.log("update")
 const ChangeTitle=()=> {
   // console.log(useState)
   setTitle("Changed Title ")
@@ -31,7 +29,7 @@ const DeleteTitle=()=>{
     return (
     
     <div  className="expense-item">
-     
+       
        <ExpenseDate date={props.date}/>
        <ExpenseDetails amount={props.amount} title={title} location={props.location} />
      <button onClick={ChangeTitle}> Change Title</button>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './ExpenseForm.css'
-import Test from './Test'
+// import Test from './Test'
 
 
 function ExpenseForm(props){
@@ -58,7 +58,8 @@ return(
         </div>
         <div  className='new-expense__control'>
             <label>Date</label>
-            <input type="date" value={EnteredDate} onChange={DateHandler}/>
+            <input type="date" min='2019-01-01'
+            max='2022-12-31' value={EnteredDate} onChange={DateHandler}/>
         </div>
         </div>
         <div className='new-expense__control'>
