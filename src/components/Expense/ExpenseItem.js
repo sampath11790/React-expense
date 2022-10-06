@@ -27,7 +27,7 @@ const DeleteTitle=()=>{
 
 
     return (
-    
+    <li>
     <div  className="expense-item">
        
        <ExpenseDate date={props.date}/>
@@ -36,6 +36,8 @@ const DeleteTitle=()=>{
      <button onClick={DeleteTitle}>DeleteTitle</button>
 
    </div>
+    </li>
+   
    );
      
 
