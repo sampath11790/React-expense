@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import './ExpenseDetails.css'
-import ExpenseFilter from './ExpenseFilter';
+
 const ExpenseDetails=(props)=>{
     const title=props.title;
     const location=props.location
@@ -19,7 +19,7 @@ const ExpenseDetails=(props)=>{
         <h2>{location}</h2>
          </div>
         <div className='expense-item__price'>{"$"+amount}</div>
-         </div>
+        </div>
        
        
         

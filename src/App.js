@@ -3,7 +3,7 @@
 import Card from "./components/Ui/Card";
 import NewExpense from "./components/NewExpense/NewExpense";
 import { useState } from "react";
-import ExpenseFilter from "./components/Expense/ExpenseFilter";
+
 import Expenses from "./components/Expense/Expenses";
 
 const dummy_object =[
