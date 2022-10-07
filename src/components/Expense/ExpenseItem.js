@@ -32,8 +32,8 @@ const DeleteTitle=()=>{
        
        <ExpenseDate date={props.date}/>
        <ExpenseDetails amount={props.amount} title={title} location={props.location} />
-     <button onClick={ChangeTitle}> Change Title</button>
-     <button onClick={DeleteTitle}>DeleteTitle</button>
+     <button className='change-btn' onClick={ChangeTitle}> Change Title</button>
+     <button  className='change-btn' onClick={DeleteTitle}>DeleteTitle</button>
 
    </div>
     </li>

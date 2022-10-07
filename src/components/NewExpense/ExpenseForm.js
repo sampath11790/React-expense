@@ -3,6 +3,7 @@ import './ExpenseForm.css'
 // import Test from './Test'
 
 
+
 function ExpenseForm(props){
     const [EnteredTittl,setEnteredTitle]=useState('')
     const [EnteredAmount,setEnteredAmount]=useState('')
@@ -28,9 +29,13 @@ function ExpenseForm(props){
         const expenseData={
             title:EnteredTittl,
             date:new Date(EnteredDate),
-            amount:JSON.parse(EnteredAmount)
+            amount:EnteredAmount
           }
-   props.onSaveExpenseData(expenseData)
+         //if input box empty it will not send empty data
+          if(expenseData.title!==''&&expenseData.date!==''&&expenseData.amount!==''){
+            props.onSaveExpenseData(expenseData)
+          }
+         
          //console.log(expenseData)
          setEnteredTitle('')
          setEnteredAmount('')
@@ -40,12 +45,13 @@ function ExpenseForm(props){
         console.log("am submitData");
      
       }
+
 //    console.log(EnteredTittl)
 //    console.log(EnteredAmount)
 //    console.log(EnteredDate)
 
 return(
-    
+   <div>
     <form  onSubmit={SubmitDate}>
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
@@ -58,15 +64,20 @@ return(
         </div>
         <div  className='new-expense__control'>
             <label>Date</label>
-            <input type="date" min='2019-01-01'
+            <input type="date" min='2018-01-01'
             max='2022-12-31' value={EnteredDate} onChange={DateHandler}/>
         </div>
         </div>
         <div className='new-expense__control'>
-            <button type='submit'>Submit</button>
+          <button className='cancel-button-ctl'type='button'onClick={props.onCancelEditBox}>Cancel</button>
+         <button type='submit'>Submit</button>
         </div>
     
     </form>
+   </div>
+     
+   
+    
    
 )
 }
