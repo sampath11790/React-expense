@@ -2,6 +2,7 @@
 import ExpenseFilter from "./ExpenseFilter"
 import React ,{useState} from "react"
 import ExpenseList from "./ExpenseList"
+import ExpenseChart from "./ExpenseChart"
 function Expenses(props){
 
 const [filterYear,SetYear]=useState('all')
@@ -24,7 +25,9 @@ const [filterYear,SetYear]=useState('all')
    //console.log(props.items[0].title)
     return(
      <div>
+     
         <ExpenseFilter onChangeFilter={FilterChangeHandler}></ExpenseFilter>
+        <ExpenseChart expenses={FilterdArray}></ExpenseChart>
         <ExpenseList items={FilterdArray}></ExpenseList>
     
  
